@@ -13,3 +13,11 @@ fun number_in_month (l : (int*int*int) list, month : int) =
     else if #2 (hd(l)) = month
     then 1 + number_in_month(tl(l), month)
     else number_in_month(tl(l), month)
+
+    
+fun number_in_months (l : (int*int*int) list, months : int list) =
+    if null l
+    then 0
+    else if null months
+    then 0
+    else number_in_month(l, hd(months)) + number_in_months(l, tl(months))
