@@ -35,3 +35,16 @@ fun dates_in_months (l : (int*int*int) list, months : int list) =
     else if null months
     then []
     else dates_in_month(l, hd(months)) @ dates_in_months(l, tl(months))
+
+fun get_nth (l : string list, n : int) =
+    if n = 1
+    then hd(l)
+    else get_nth(tl(l), n - 1)
+
+fun date_to_string(date : (int*int*int)) =
+    let
+    val months = ["January", "February", "March", "April", "May", "June", "July", "September", "October", "November", "December"];
+    val month = get_nth(months, #2 date);
+    in
+    month ^ " " ^ Int.toString(#3 date) ^ ", " ^ Int.toString(#1 date)
+    end
