@@ -34,4 +34,4 @@ fun dates_in_months (l : (int*int*int) list, months : int list) =
     then []
     else if null months
     then []
-    else dates_in_month(l, hd(months))::dates_in_months(l, tl(months))
+    else dates_in_month(l, hd(months)) @ dates_in_months(l, tl(months))
