@@ -48,3 +48,6 @@ fun date_to_string(date : (int*int*int)) =
     in
     month ^ " " ^ Int.toString(#3 date) ^ ", " ^ Int.toString(#1 date)
     end
+
+fun number_before_reaching_sum(sum : int, l : int list) =
+    1
