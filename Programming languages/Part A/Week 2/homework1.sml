@@ -50,4 +50,8 @@ fun date_to_string(date : (int*int*int)) =
     end
 
 fun number_before_reaching_sum(sum : int, l : int list) =
-    1
+    if null l
+    then 0
+    else if hd(l) >= sum
+    then 0
+    else 1 + number_before_reaching_sum(sum - hd(l), tl(l))
