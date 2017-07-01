@@ -53,5 +53,12 @@ fun number_before_reaching_sum(sum : int, l : int list) =
     if null l
     then 0
     else if hd(l) >= sum
-    then 0
+    then 1
     else 1 + number_before_reaching_sum(sum - hd(l), tl(l))
+
+fun what_month (n : int) =
+    let
+        val dates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    in
+        number_before_reaching_sum(n, dates)
+    end
