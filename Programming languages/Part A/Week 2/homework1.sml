@@ -63,7 +63,6 @@ fun what_month (n : int) =
 
 fun month_range(day1 : int, day2 : int) =
     let
-      val second = what_month(day2);
       fun calculate (day : int) =
         if day <= day2
         then [what_month(day)]@calculate(day + 1)
