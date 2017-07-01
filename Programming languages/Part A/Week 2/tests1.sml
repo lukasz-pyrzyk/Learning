@@ -1,6 +1,10 @@
 val test1_1 = is_older ((1,2,3),(2,3,4)) = true
 val test1_2 = is_older ((1,2,3),(1, 2, 3)) = false
 val test1_3 = is_older ((2,3,4),(1, 2, 3)) = false
+val test1_4 = is_older ((2012, 1, 1), (2012, 1, 1)) = false
+val test1_5 = is_older ((2012, 2, 2), (2012, 1, 1)) = false
+val test1_6 = is_older ((2012, 2, 1), (2012, 1, 5)) = false
+
 
 val test2_1 = number_in_month ([(2012,3,28),(2013,12,1)],2) = 0
 val test2_2 = number_in_month ([(2012,2,28),(2013,12,1)],2) = 1
@@ -24,10 +28,10 @@ val test8_2 = number_before_reaching_sum (10, [1,2,3,4,5]) = 3
 
 val test9_1 = what_month 15 = 1
 val test9_2 = what_month 30 = 1
-val test9_3 = what_month 31 = 1
+val test9_3 = what_month 31 = 1 
 val test9_4 = what_month 32 = 2
 val test9_5 = what_month 70 = 3
 
 val test10 = month_range (31, 34) = [1,2,2,2]
-(*
-val test11 = oldest([(2012,2,28),(2011,3,31),(2011,4,28)]) = SOME (2011,3,31) *)
+
+val test11 = oldest([(2012,2,28),(2011,3,31),(2011,4,28)]) = SOME (2011,3,31)
