@@ -62,3 +62,13 @@ fun what_month (n : int) =
     in
         number_before_reaching_sum(n, dates)
     end
+
+fun month_range(day1 : int, day2 : int) =
+    let
+      val first = what_month(day1);
+      val second = what_month(day2);
+    in
+        if day1 <= day2
+        then [first]@month_range(day1 + 1, day2)
+        else []
+    end
