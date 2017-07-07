@@ -1,0 +1,4 @@
+- Tuples build each-of types, like `int * bool` contains as `int` **and** a `bool`
+- Options build one-of types, like `int option` contains an int **or** it contains `no data`
+- lists use all three building blocks, like `int list` contains an int **and** another int list or it contains `no data`
+- And of course we can nest compound types, like `((int * int)) option * ((int list list)) option`
