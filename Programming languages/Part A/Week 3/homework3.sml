@@ -30,13 +30,26 @@ fun get_substitutions2 (substitutions, str) =
     let
       fun aux(subs, acc) =
         case subs of
-            [] => []
+            [] => acc
           | head::tail => case all_except_option(str, head) of
                             NONE => aux(tail, acc)
-                          | SOME xs => aux(tail, xs @ acc)
+                          | SOME xs => aux(tail, acc @ xs)
     in
       aux(substitutions, [])
     end
+
+(* 1D *)
+fun similar_names (substitutions, name) =
+  let
+    val {first=x, middle=y, last=z} = name
+    fun generateName sub =
+      case sub of
+         [] => []
+        | head::tail => {first=head,middle=y,last=z}::generateName(tail)
+  in
+    name::generateName(get_substitutions2(substitutions, x))
+  end
+
 
 (* you may assume that Num is always used with values 2, 3, ..., 10
    though it will not really come up *)
