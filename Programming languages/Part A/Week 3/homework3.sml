@@ -52,8 +52,18 @@ fun remove_card (cs, c, e) =
                      then tail
                      else head::remove_card(tail, c, e)
 
-fun all_same_color (cards) =
+fun all_same_color cards =
     case cards of
         [] => true
       | _ ::[] => true
-      | head::(neck::tail) => card_color(head) = card_color(neck) andalso all_same_color(neck::tail)
+      | head::neck::tail => card_color(head) = card_color(neck) andalso all_same_color(neck::tail)
+
+fun sum_cards cards =
+    let
+      fun aux(cards, acc) =
+        case cards of
+           [] => acc
+         | head::tail => aux(tail, acc + card_value(head))
+    in
+      aux(cards, 0)
+    end
