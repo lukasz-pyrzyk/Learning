@@ -19,6 +19,11 @@ fun all_except_option (s, list) =
 
 (* 1B *)
 fun get_substitutions1 (substitutions, str) =
+    case substitutions of
+       [] => []
+     | head::tail => case all_except_option(str, head) of
+                     NONE => get_substitutions1(tail, str)
+                   | SOME xs => xs @ get_substitutions1(tail, str)
 
 (* you may assume that Num is always used with values 2, 3, ..., 10
    though it will not really come up *)

@@ -6,7 +6,7 @@
 val test1 = all_except_option ("string", ["string"]) = SOME []
 
 val test2_1 = get_substitutions1([["foo"],["there"]], "foo") = []
-val test2_2 = get_substitutions1([["Fred","Fredrick"],["Jeff","Jeffrey"],["Geoff","Jeff","Jeffrey"]], "Jeff") = "Jeffrey","Geoff","Jeffrey"]
+val test2_2 = get_substitutions1([["Fred","Fredrick"],["Jeff","Jeffrey"],["Geoff","Jeff","Jeffrey"]], "Jeff") = ["Jeffrey","Geoff","Jeffrey"]
 
 
 (*
