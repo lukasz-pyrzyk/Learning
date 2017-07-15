@@ -67,3 +67,31 @@ fun sum_cards cards =
     in
       aux(cards, 0)
     end
+
+(*2 F*)
+fun score (cards, goal) =
+  let
+    val sum = sum_cards(cards)
+    fun calculateResult (sum, goal) =
+      if sum > goal
+      then 3 * (sum - goal)
+      else goal - sum
+  in
+    if all_same_color cards
+    then calculateResult (sum, goal) div 2
+    else calculateResult (sum, goal)
+  end
+
+fun officiate (cards, moves, goal) =
+  let fun aux(cards, move_lst, heldcards) =
+    case move_lst of
+      [] => score(heldcards, goal)
+    | Discard discard::tail => aux(cards, tail, remove_card(heldcards, discard, IllegalMove))
+    | _::tail => case cards of
+                      [] => score(heldcards, goal)
+                    | first::rest => if sum_cards(first::heldcards) < goal
+                                     then aux(rest, tail, first::heldcards)
+                                     else score(first::heldcards, goal)
+  in
+    aux(cards, moves, [])
+  end
