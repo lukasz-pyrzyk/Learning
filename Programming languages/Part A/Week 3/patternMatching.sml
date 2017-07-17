@@ -28,3 +28,9 @@ fun full_name_best {first=x, middle=y, last=z} =
 
 fun rotate_left (x, y, z) = (y, z, x)
 fun rotate_right t = rotate_left(rotate_left t)
+
+(*
+a::b::c::d matches all lists with >= 3 elements
+a::b::c::[] maches all lists with 3 elements
+(a, b), (cd))::e non empty lists of pairs of pairs
+*)
