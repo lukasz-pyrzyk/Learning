@@ -43,3 +43,9 @@ val removeZeros = List.filter(fn x => x <> 0)
 val pairWithOne = List.map (fn x => (x, 1)) (* warning... *)
 fun pairWithOneCorrect xs = List.map (fn x => (x, 1)) xs
 val pairWithOneCorrectWithoutPolimorphic : string list -> (string * int) list = List.map (fn x => (x, 1))
+
+(* summary *)
+fun other_curry f = fn x => fn y => f y x
+fun other_curry2 f x y = f y x
+fun curry f x y = f (x, y)
+fun uncurry f (x, y) = f x y
