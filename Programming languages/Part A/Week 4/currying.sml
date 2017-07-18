@@ -20,3 +20,26 @@ fun fold f acc xs =
      | head::tail => fold f(f(acc, head)) tail
 
 fun sum xs = fold(fn (x, y) => x + y) 0 xs
+
+fun is_nonnegative x = sorted3 0 0 x
+val is_nonnegative1 = sorted3 0 0
+
+fun sum xs = fold(fn (x, y) => x + y) 0 xs
+val sum = fold(fn (x, y) => x + y) 0
+
+fun range i j = if i > j then [] else i :: range(i + 1) j
+val countup = range 1 (* countup 6 => [1, 2, 3, 4, 5, 6]*)
+
+fun exists predicate xs =
+  case xs of
+     [] => false
+   | head::tail => predicate head orelse exists predicate tail
+
+val no = exists (fn x => x = 7) [4, 11, 23]
+val hasZero = exists (fn x=> x = 7)
+val incramentAll = List.map (fn x => x + 1)
+val removeZeros = List.filter(fn x => x <> 0)
+
+val pairWithOne = List.map (fn x => (x, 1)) (* warning... *)
+fun pairWithOneCorrect xs = List.map (fn x => (x, 1)) xs
+val pairWithOneCorrectWithoutPolimorphic : string list -> (string * int) list = List.map (fn x => (x, 1))
