@@ -34,4 +34,11 @@ datatype typ = Anything
 	     | TupleT of typ list
 	     | Datatype of string
 
-(**** you can put all your code here ****)
+(* 1A *)
+val only_capitals = List.filter (fn x => Char.isUpper(String.sub(x, 0)))
+
+(* 1B *)
+val longest_string1 = List.foldl (fn (x, y) => if String.size x > String.size y then x else y) ""
+
+(* 1C *)
+val longest_string2 = List.foldl (fn (x, y) => if String.size x >= String.size y then x else y) ""
