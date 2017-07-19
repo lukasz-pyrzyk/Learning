@@ -21,12 +21,12 @@ val test4a_3= longest_string3 ["A", "B", "C"] = "A"
 val test4b_1  = longest_string4 ["A","bc","C"] = "bc"
 val test4b_2  = longest_string4 ["A","B","C"] = "C"
 
-
-(*
 val test5 = longest_capitalized ["A","bc","C"] = "A"
 
-val test6 = rev_string "abc" = "cba"
+val test6_1 = rev_string "abc" = "cba"
+val test6_2 = rev_string "" = ""
 
+(*
 val test7 = first_answer (fn x => if x > 3 then SOME x else NONE) [1,2,3,4,5] = 4
 
 val test8 = all_answers (fn x => if x = 1 then SOME [x] else NONE) [2,3,4,5,6,7] = NONE
