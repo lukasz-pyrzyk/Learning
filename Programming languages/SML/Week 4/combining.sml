@@ -17,3 +17,17 @@ fun backup1 (f, g) = fn x => case f x of
                               | SOME y => y
 
 fun backup2 (f, g) = fn x => f x handle _ => g x
+
+fun mystery f = fn xs =>  
+    let
+        fun g xs =
+           case xs of
+               [] => NONE
+             | x::xs' => if f x then SOME x else g xs'
+    in
+        case xs of
+            [] => NONE
+          | x::xs' => if f x then g xs' else mystery f xs'
+    end
+
+fun null xs = xs =[]
