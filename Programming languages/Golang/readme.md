@@ -13,6 +13,7 @@
 12. [GORM: An Object Relational Mapper for Go](https://www.pluralsight.com/courses/gorm-go-object-relational-mapper)
 12. [Building Better Go Web Apps with the Gorilla Toolkit](https://www.pluralsight.com/courses/build-go-apps-gorilla-toolkit)
 12. [Creating Well-tested Applications in Go](https://www.pluralsight.com/courses/go-testing-applications)
+13. [Golang tutorial on the golangbot.com](https://golangbot.com/)
 
 
 
