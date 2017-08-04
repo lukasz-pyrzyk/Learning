@@ -14,3 +14,9 @@
 ; AD 2
 (define (string-append-map xs suffix)
   (map (lambda (i) (string-append i suffix)) xs))
+
+; AD 3
+(define (list-nth-mod xs n)
+  (cond [(negative? n) (error "list-nth-mod: negative number")]
+        [(empty? n) (error "list-nth-mod: empty list")]
+        [#t (car (list-tail xs (remainder n (length xs))))]))
