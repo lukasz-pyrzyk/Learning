@@ -1,4 +1,5 @@
 ## Courses to take:
+0. [FAQ](https://golang.org/doc/faq)
 1. [The Go Programming Language](https://www.pluralsight.com/courses/go)
 2. [Creating Web Applications with Go](https://www.pluralsight.com/courses/creating-web-applications-go)
 3. [Creating Web Applications with Go](https://www.pluralsight.com/courses/creating-web-applications-go-update)
@@ -14,8 +15,8 @@
 12. [Building Better Go Web Apps with the Gorilla Toolkit](https://www.pluralsight.com/courses/build-go-apps-gorilla-toolkit)
 12. [Creating Well-tested Applications in Go](https://www.pluralsight.com/courses/go-testing-applications)
 13. [Golang tutorial on the golangbot.com](https://golangbot.com/)
-
-
-
-
+14. [Golang blog](https://blog.golang.org/)
+15. [dotGo 2015 - Rob Pike - Simplicity is Complicated](https://www.youtube.com/watch?v=rFejpH_tAHM)
+16. [An introduction to programming in GO](https://www.golang-book.com/books/intro)
+17. [Go by example](https://gobyexample.com/)
 
