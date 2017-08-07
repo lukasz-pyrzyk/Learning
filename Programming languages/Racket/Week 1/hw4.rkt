@@ -20,3 +20,22 @@
   (cond [(negative? n) (error "list-nth-mod: negative number")]
         [(empty? n) (error "list-nth-mod: empty list")]
         [#t (car (list-tail xs (remainder n (length xs))))]))
+
+(define (stream-for-n-steps s n)
+  (if (equal? n 0)
+      null
+      (let ([nextvalue (s)])
+        (cons (car nextvalue) (stream-for-n-steps (cdr nextvalue) (- n 1))))))
+
+(define funny-number-stream
+  (letrec ([f (lambda (x) 
+                (cons (if (equal? (remainder x 5) 0) (- 0 x) x) (lambda () (f (+ x 1)))))])
+    (lambda () (f 1))))
+
+(define dan-then-dog
+  (lambda () (cons "dan.jpg" (lambda () (cons "dog.jpg" dan-then-dog)))))
+
+(define (stream-add-zero s)
+  (let ([nextValue (s)]) 
+    (lambda () (cons (cons 0 (car nextValue))
+                     (stream-add-zero (cdr nextValue))))))
