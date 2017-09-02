@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E3EB559-9A7E-4D50-9D68-62BD971B07A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_30daysOfCode</RootNamespace>
+    <AssemblyName>30daysOfCode</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.6.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Day0.cs" />
+    <Compile Include="Day11_Test.cs" />
+    <Compile Include="Day16.cs" />
+    <Compile Include="Day15.cs" />
+    <Compile Include="Day14.cs" />
+    <Compile Include="Day13.cs" />
+    <Compile Include="Day12.cs" />
+    <Compile Include="Day11.cs" />
+    <Compile Include="Day28_Test.cs" />
+    <Compile Include="Day28.cs" />
+    <Compile Include="Day27.cs" />
+    <Compile Include="Day26.cs" />
+    <Compile Include="Day25.cs" />
+    <Compile Include="Day24.cs" />
+    <Compile Include="Day23.cs" />
+    <Compile Include="Day25_Test.cs" />
+    <Compile Include="Day24_Test.cs" />
+    <Compile Include="Day23_Test.cs" />
+    <Compile Include="Day22_Test.cs" />
+    <Compile Include="Day10_Test.cs" />
+    <Compile Include="Day22.cs" />
+    <Compile Include="Day21.cs" />
+    <Compile Include="Day20.cs" />
+    <Compile Include="Day19.cs" />
+    <Compile Include="Day18.cs" />
+    <Compile Include="Day17.cs" />
+    <Compile Include="Day7.cs" />
+    <Compile Include="Day6.cs" />
+    <Compile Include="Day10.cs" />
+    <Compile Include="Day9.cs" />
+    <Compile Include="Day8.cs" />
+    <Compile Include="Day5.cs" />
+    <Compile Include="Day4.cs" />
+    <Compile Include="Day3.cs" />
+    <Compile Include="Day2.cs" />
+    <Compile Include="Day1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BaseTestFixture\BaseTestFixture.csproj">
+      <Project>{6CC7F771-91E8-43CB-BC3B-F55E03CF41A6}</Project>
+      <Name>BaseTestFixture</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
