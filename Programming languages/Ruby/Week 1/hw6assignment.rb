@@ -1,55 +1,70 @@
-# University of Washington, Programming Languages, Homework 6, hw6runner.rb
-
-# This is the only file you turn in, so do not modify the other files as
-# part of your solution.
-
 class MyPiece < Piece
-  # The constant All_My_Pieces should be declared here
+    def self.next_piece (board)
+      MyPiece.new(All_My_Pieces.sample, board) # notice change
+    end
 
-  # your enhancements here
+All_My_Pieces = All_Pieces + [
+     [[[0, 0], [-1, 0], [1, 0], [2, 0], [-2,0]],
+     [[0, 0], [0, -1], [0, 1], [0, 2], [0, -2]]],
+     rotations([[0, 0], [-1, 0], [1, 0], [0, -1], [-1,-1]]),
+     rotations([[0, 0], [1, 0], [0, 1]])#
+  ]
 
+  def self.next_cheat_piece (board)
+    MyPiece.new([[[0, 0]]], board)
+  end
 end
 
 class MyBoard < Board
-  # your enhancements here
+  attr_accessor :cheat
+
+  def initialize (game)
+    @cheat = false
+    @grid = Array.new(num_rows) {Array.new(num_columns)}
+    @current_block = MyPiece.next_piece(self)
+    @score = 0
+    @game = game
+    @delay = 500
+  end
+
+  def rotate_180
+    if !game_over? and @game.is_running?
+      @current_block.move(0, 0, 2)
+    end
+    draw
+  end
+
+  def next_piece
+    if (@cheat)
+       @current_block = MyPiece.next_cheat_piece(self)
+       @cheat = false
+    else
+       @current_block = MyPiece.next_piece(self)
+    end
+    @current_pos = nil
+  end
+
+  def maybe_cheat
+    if @score >= 100 and !@cheat
+      @score -= 100
+      @cheat = true
+    end
+  end
 
 end
 
 class MyTetris < Tetris
-  def initialize
-    @root = TetrisRoot.new
-    @timer = TetrisTimer.new
-    set_board
-    @running = true
-    key_bindings
-    buttons
-    run_game
-  end
+  def key_bindings
+    super
+    super
+    @root.bind('u', proc { @board.rotate_clockwise; @board.rotate_clockwise })
+    @root.bind('c', proc { @board.maybe_cheat })
+  end 
 
   def set_board
     @canvas = TetrisCanvas.new
-    @board = Board.new(self)
-    @canvas.place(@board.block_size * @board.num_rows + 3,
-                  @board.block_size * @board.num_columns + 6, 24, 80)
+    @board = MyBoard.new(self)
+    @canvas.place(@board.block_size * @board.num_rows + 3, @board.block_size * @board.num_columns + 6, 24, 80)
     @board.draw
   end
-
-  def run_game
-    if !@board.game_over? and @running
-      @timer.stop
-      @timer.start(@board.delay, (proc{@board.run; run_game}))
-    end
-  end
-
-  def key_bindings
-    @root.bind('u', proc {rotate})
-  end
-
-  def rotate
-    @board.rotate_clockwise
-    @board.rotate_clockwise
-  end
-
 end
-
-
