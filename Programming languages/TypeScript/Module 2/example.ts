@@ -30,3 +30,8 @@ let trueorFalse : boolean;
 let someArray : Array<any>
 let someElement : Element;
 let someObject: object;
+let nullThing: null;
+let undefinedThing: undefined;
+let voidThing: void;
+
+let anyOldThing: any;
