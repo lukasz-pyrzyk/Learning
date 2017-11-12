@@ -1,17 +1,15 @@
-namespace ArrayUtilities {
-    export function reverseArray(array: Array<number>) {
+class ArrayUtilities {
+    reverseArray(array: Array<any>) {
         return array.slice(0).reverse();
     }
-
-    export function firstItemOfArray(array: Array<number>) {
-        return array.slice(0).shift();
-    }
-
-    export function lastItemOfArray(array: Array<number>) {
+    lastItemOfArray(array: Array<any>) {
         return array.slice(0).pop();
     }
-
-    export function concat(left : Array<number>, right : Array<number>) {
-        return left.concat(right);
+    firstItemOfArray(array: Array<any>) {
+        return array.slice(0).shift();
+    }
+    concatenateArray(array1: Array<any>, array2: Array<any>) {
+        return array1.concat(array2);
     }
 }
+export default new ArrayUtilities;
