@@ -1,5 +1,5 @@
 import Die from './Die.js'
-import Chance = require('chance');
+import * as Chance from 'chance';
 
 let elementSets: Array<Die> = [];
 for (let index: number = 0; index < 4; index++) {
