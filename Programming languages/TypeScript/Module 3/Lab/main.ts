@@ -1,5 +1,5 @@
 import Die from './Die.js'
-import * as _ from 'chance';
+import Chance = require('chance');
 
 let elementSets: Array<Die> = [];
 for (let index: number = 0; index < 4; index++) {
@@ -19,8 +19,9 @@ enum Values {
 
 let button: Element = document.createElement('button');
 (button as HTMLElement).onclick = (event) => {
+    let chance = new Chance();
     elementSets.forEach(e => {
-        let index =_.Chance().integer({ min: 0, max: 4 });
+        let index = chance.integer({ min: 0, max: 4 });        
         let text = Values[index];
         e.ChangeText(text)
     });
