@@ -1,0 +1,15 @@
+<html>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.20.12/system.js"></script>
+    <script>
+        SystemJS.config({
+            map: {
+                'chance': './node_modules/chance/chance.js'
+            }
+        });
+        SystemJS.import('main.js')
+    </script>
+</body>
+
+</html>
