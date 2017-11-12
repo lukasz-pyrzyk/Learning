@@ -2,6 +2,7 @@
 exports.__esModule = true;
 var Die_js_1 = require("./Die.js");
 var Chance = require("chance");
+var _ = require("lodash");
 var elementSets = [];
 for (var index = 0; index < 4; index++) {
     var div = document.createElement('div');
@@ -20,7 +21,7 @@ var Values;
 var button = document.createElement('button');
 button.onclick = function (event) {
     var chance = new Chance();
-    elementSets.forEach(function (e) {
+    _.each(elementSets, function (e) {
         var index = chance.integer({ min: 0, max: 4 });
         var text = Values[index];
         e.ChangeText(text);
